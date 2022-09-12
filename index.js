@@ -15,8 +15,9 @@ let produce = [
 //Create a GET REST method to return data
 	// this function has a request object, response object, and a next object
 router.get('/', function (req, res, next) {
-	// send out the test text 'Mango' 
 	res.status(200).json({
+		// status, statusText, and message properties were added
+		// the data produce property as well
 		"status": 200,
 		"statusText": "OK",
 		"message": "Farmer's market items are successully collected",
