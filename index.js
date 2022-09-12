@@ -16,7 +16,7 @@ let produce = [
 	// this function has a request object, response object, and a next object
 router.get('/', function (req, res, next) {
 	// send out the test text 'Mango' 
-	res.send(produce);
+	res.status(200).send(produce);
 });
 
 // Start up the router so all routers are fixed with /api/v1
