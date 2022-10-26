@@ -1,0 +1,26 @@
+[
+	{ "id": 1, 
+		"name": "squash",
+		"price": "4.00 per pound"
+		},
+
+	{ "id": 2, 
+		"name": "kale",
+		"price": "3.00 per bunch"
+		},
+
+	{ "id": 3, 
+		"name": "green onions",
+		"price": "2.00 per bunch"
+		},
+
+	{ "id": 4, 
+		"name": "potatoes",
+		"price": "4.00 per pound"
+		},
+				
+	{ "id": 5, 
+		"name": "beets",
+		"price": "3.00 per bunch"
+	}
+]

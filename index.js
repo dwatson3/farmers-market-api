@@ -1,27 +1,26 @@
 // The express server is brought in and create the application
 let express = require('express');
 let app = express();
+let marketItems = require('./repos/marketItems');
 
 //Call in the Express Router object
 let router = express.Router();
-let produce = [
-	{ "id": 1, "name": "squash"},
-	{ "id": 2, "name": "kale"},
-	{ "id": 3, "name": "green onions"},
-	{ "id": 4, "name": "potatoes"},
-	{ "id": 5, "name": "beets"}
-];
+//let items = marketItems.get();
 
 //Create a GET REST method to return data
 	// this function has a request object, response object, and a next object
 router.get('/', function (req, res, next) {
-	res.status(200).json({
-		// status, statusText, and message properties were added
-		// the data produce property as well
-		"status": 200,
-		"statusText": "OK",
-		"message": "Farmer's market items are successully collected",
-		"data": produce
+	marketItems.get(function (data) {
+		res.status(200).json({
+			// status, statusText, and message properties were added
+			// the data produce property as well
+			"status": 200,
+			"statusText": "OK",
+			"message": "Farmer's market items are successfully collected",
+			"data": data
+		});
+	}, function(err) {
+		next(err);
 	});
 });
 
